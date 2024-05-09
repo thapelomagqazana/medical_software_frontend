@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import AvailableAppointmentSlots from './components/AvailableAppointmentSlots';
+import AppointmentBookingForm from './components/AppointmentBookingForm';
+import { bookAppointment } from './services/appointmentService';
 import './App.css';
 
 function App() {
+  const [bookingData, setBookingData] = useState(null);
+
+  const handleBooking = async (data) => {
+    try {
+      const response = await bookAppointment(data);
+      setBookingData(response);
+    } catch (error) {
+      console.error("Error booking appointment:", error);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Appointment Booking System</h1>
+      <AvailableAppointmentSlots onSelectAppointment={handleBooking} />
+      <AppointmentBookingForm onSubmit={handleBooking} />
+
+      {bookingData && (
+        <div>
+          <h2>Booking Details</h2>
+          <p>Start Time: {bookingData.startTime}</p>
+          <p>End Time: {bookingData.endTime}</p>
+          {/* Display additional booking details as needed */}
+        </div>
+      )}
     </div>
   );
 }
