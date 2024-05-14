@@ -1,16 +1,14 @@
 import React from "react";
 import "./Introduction.css";
 
-const Introduction = () => {
+const Introduction = ({ title, description }) => {
     return (
-        <section className="introduction">
-            <div className="introduction-content">
-                <h2>Welcome to Our Appointment Scheduling Service</h2>
-                <p>
-                    Our service offers a seamless and efficient way to manage your healthcare appointments. With personalized scheduling options and streamlined communication features, you can take control of your health journey like never before.
-                </p>
-            </div>
-        </section>
+      <section className="introduction">
+        <div className="introduction-content">
+          <h2 className="introduction-title">{title}</h2>
+          <p className="introduction-description">{description}</p>
+        </div>
+      </section>
     );
 };
 

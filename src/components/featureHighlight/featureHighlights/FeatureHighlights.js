@@ -21,7 +21,7 @@ const FeatureHighlights = () => {
                 <FeatureHighlight
                     icon={<FontAwesomeIcon icon={faClipboard} />}
                     title="Comprehensive Appointment Management"
-                    description="Manage appointments, view past visits, and access medical records from a centralized dashboard."
+                    description="Manage your appointments and medical visits easily."
                 />
             </div>
         </section>

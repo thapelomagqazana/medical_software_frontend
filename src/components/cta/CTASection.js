@@ -7,8 +7,7 @@ const CTASection = () => {
             <div className="cta-container">
                 <h2 className="cta-heading">Ready to Schedule Your Appointments?</h2>
                 <p className="cta-subheading">Get started today and experience hassle-free appointment booking.</p>
-                <button className="cta-button">Schedule Now</button>
-                
+                <button className="cta-button">Schedule Now</button>    
             </div>
         </section>
     );

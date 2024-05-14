@@ -1,11 +1,13 @@
 import React from "react";
 import "./Hero.css"; // Import component=specific styles
 
-const Hero = () => {
+const Hero = ({ headline, subheading, ctaText }) => {
     return (
         <section className="hero">
             <div className="hero-content">
-                <h1>Streamline Your Healthcare Appointments</h1>
+                <h1 className="hero-headline">{headline}</h1>
+                <p className="hero-subheading">{subheading}</p>
+                <button className="hero-cta">{ctaText}</button>
             </div>
         </section>
     );

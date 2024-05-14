@@ -1,20 +1,19 @@
 .introduction {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-  }
-  
-  .introduction-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .introduction h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .introduction p {
-    font-size: 1.1rem;
-    color: #555;
-  }
+  padding: 50px 0;
+  text-align: center;
+}
+
+.introduction-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.introduction-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.introduction-description {
+  font-size: 1.2rem;
+}

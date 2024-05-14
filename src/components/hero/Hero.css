@@ -1,5 +1,6 @@
 .hero {
-    background-image: url("/public/images/national-cancer-institute-DK--4VWK1tw-unsplash.jpg");
+    background-image: url("/public/images/pexels-karolina-grabowska-4021769.jpg");
+    /* filter: brightness(50%); */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -7,16 +8,38 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color:  #f2f2f2;
 }
   
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
+    padding: 20px;
 }
   
-.hero h1 {
-    font-size: 3rem;
+.hero-headline {
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 20px;
+}
+
+.hero-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.hero-cta {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: #0056b3;
 }
 
   
