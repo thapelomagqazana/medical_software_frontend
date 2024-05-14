@@ -1,0 +1,12 @@
+.feature-highlights {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .feature-highlights-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }

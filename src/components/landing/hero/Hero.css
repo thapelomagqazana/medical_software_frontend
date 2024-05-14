@@ -1,0 +1,22 @@
+.hero {
+    background-image: url("/public/images/national-cancer-institute-DK--4VWK1tw-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+  
+.hero-content {
+    max-width: 600px;
+}
+  
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+  

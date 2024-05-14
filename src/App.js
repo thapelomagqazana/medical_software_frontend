@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
-import AvailableAppointmentSlots from './components/AvailableAppointmentSlots';
-import AppointmentBookingForm from './components/AppointmentBookingForm';
-import { bookAppointment } from './services/appointmentService';
+import React from 'react';
+import Hero from "./components/landing/hero/Hero";
+import Introduction from './components/landing/intro/Introduction';
+import FeatureHighlights from './components/landing/featureHighlight/featureHighlights/FeatureHighlights';
+import Header from "./components/landing/header/Header";
+import TestimonialSection from './components/landing/testimonialSection/TestimonialSection';
+import CTASection from './components/landing/cta/CTASection';
+import Footer from './components/landing/footer/Footer';
+
+
 import './App.css';
 
-function App() {
-  const [bookingData, setBookingData] = useState(null);
-
-  const handleBooking = async (data) => {
-    try {
-      const response = await bookAppointment(data);
-      setBookingData(response);
-    } catch (error) {
-      console.error("Error booking appointment:", error);
-    }
-  };
+const App = () => {
   return (
-    <div>
-      <h1>Appointment Booking System</h1>
-      <AvailableAppointmentSlots onSelectAppointment={handleBooking} />
-      <AppointmentBookingForm onSubmit={handleBooking} />
-
-      {bookingData && (
-        <div>
-          <h2>Booking Details</h2>
-          <p>Start Time: {bookingData.startTime}</p>
-          <p>End Time: {bookingData.endTime}</p>
-          {/* Display additional booking details as needed */}
-        </div>
-      )}
+    <div className='App'>
+      <Header />
+      <Hero />
+      <Introduction />
+      <FeatureHighlights />
+      <TestimonialSection />
+      <CTASection />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
