@@ -9,7 +9,7 @@ import Footer from "../../components/footer/Footer";
 const LandingPage = () => {
 
     const userLoggedIn = false; // Set to true if user is logged in
-    const appointmentScheduled = false; // Set to true if appointment is scheduled
+    const appointmentScheduled = true; // Set to true if appointment is scheduled
     return (
         <div className="landing">
             <Header userLoggedIn={userLoggedIn} appointmentScheduled={appointmentScheduled} />

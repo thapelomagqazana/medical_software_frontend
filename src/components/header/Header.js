@@ -3,33 +3,6 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = (props) => {
-  let navItems;
-
-  if (!props.userLoggedIn) {
-    navItems = (
-      <React.Fragment>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
-      </React.Fragment>
-    );
-  } else {
-    if (!props.appointmentScheduled) {
-      navItems = (
-        <React.Fragment>
-          <li>Schedule Appointment</li>
-          <li>Profile</li>
-          <li>Logout</li>
-        </React.Fragment>
-      );
-    } else {
-      navItems = (
-        <React.Fragment>
-          <li>Profile</li>
-          <li>Logout</li>
-        </React.Fragment>
-      );
-    }
-  }
 
   return (
     <header className="header">
@@ -38,17 +11,21 @@ const Header = (props) => {
     </div>
     <nav className="navigation">
       <ul>
-        <li>Find Providers</li>
-        <li>My Appointments</li>
+        {props.userLoggedIn && <li>Find Providers</li>}
+        {props.userLoggedIn && <li>My Appointments</li>}
         <li>About Us</li>
         <li>Contact</li>
-        {navItems}
+        {!props.userLoggedIn && <li><Link to="/login">Login</Link></li>}
+        {!props.userLoggedIn && <li><Link to="/register">Register</Link></li>}
+        {props.userLoggedIn && !props.appointmentScheduled && <li><Link to="/schedule">Schedule Appointment</Link></li>}
+        {props.userLoggedIn && <li><Link to="/profile">Profile</Link></li>}
+        {props.userLoggedIn && <li><Link to="/logout">Logout</Link></li>}
       </ul>
     </nav>
-    <div className="search-bar">
+    {props.userLoggedIn && <div className="search-bar">
       <input type="text" placeholder="Search for providers..." />
       <button>Search</button>
-    </div>
+    </div>}
   </header>
   );
 };

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './LoginForm.css';
 
 const SignUpForm = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -15,6 +17,24 @@ const SignUpForm = () => {
     <div className="signup-form-container">
       <h2>Create an Account</h2>
       <form onSubmit={handleSignUp}>
+        <div className="form-group">
+          <label>First Name:</label>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Last Name:</label>
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
+        </div>
         <div className="form-group">
           <label>Email:</label>
           <input
