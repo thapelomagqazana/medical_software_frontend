@@ -1,0 +1,4 @@
+.main-content {
+    flex-grow: 1; /* Allow main content to grow and fill remaining space */
+    padding: 20px;
+}

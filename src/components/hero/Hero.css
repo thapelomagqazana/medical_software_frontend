@@ -28,8 +28,7 @@
     margin-bottom: 40px;
 }
 
-.hero-cta,
-.navigation button {
+.hero-cta {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
@@ -41,8 +40,9 @@
 }
 
 .hero-cta:hover,
-.navigation button:hover {
-    background-color: #0056b3;
+.navigation li:hover,
+.navigation ul li a:hover {
+    color: #0056b3;
 }
 
   

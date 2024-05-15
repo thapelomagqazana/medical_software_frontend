@@ -9,6 +9,11 @@ const LoginForm = ({ onClose }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -40,12 +45,19 @@ const LoginForm = ({ onClose }) => {
         <div className="form-group">
           <label>Password:</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
+        <button
+          type="button"
+          onClick={togglePasswordVisibility}
+          className="toggle-password"
+        >
+          {showPassword ? "Hide" : "Show"} Password
+        </button>
         <button type="submit" className="login-button">Login</button>
       </form>
     </div>

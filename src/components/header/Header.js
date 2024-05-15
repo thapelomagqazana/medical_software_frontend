@@ -20,17 +20,20 @@ const Header = (props) => {
     <div className="logo">
       <Link to="/">Medical Scheduler</Link>
     </div>
+    <div>
+      <p>Welcome to the Appointment Scheduling System</p>
+    </div>
     <nav className="navigation">
       <ul>
-        {props.userLoggedIn && <li>Find Providers</li>}
-        {props.userLoggedIn && <li>My Appointments</li>}
+        {/* {props.userLoggedIn && <li>Find Providers</li>}
+        {props.userLoggedIn && <li>My Appointments</li>} */}
         <li>About Us</li>
         <li>Contact</li>
-        {!props.userLoggedIn && <li><button onClick={openLogin}>Login</button></li>}
-        {!props.userLoggedIn && <li><button onClick={openRegister}>Register</button></li>}
-        {props.userLoggedIn && !props.appointmentScheduled && <li><Link to="/schedule">Schedule Appointment</Link></li>}
-        {props.userLoggedIn && <li><Link to="/profile">Profile</Link></li>}
-        {props.userLoggedIn && <li><Link to="/logout">Logout</Link></li>}
+        {!props.userLoggedIn && <li onClick={openLogin}>Login</li>}
+        {!props.userLoggedIn && <li onClick={openRegister}>Register</li>}
+        {/* {props.userLoggedIn && <li><Link to="/schedule">Schedule Appointment</Link></li>}
+        {props.userLoggedIn && <li><Link to="/profile">Profile</Link></li>} */}
+        {props.userLoggedIn && <li><Link to="/">Logout</Link></li>}
       </ul>
     </nav>
     {props.userLoggedIn && <div className="search-bar">
