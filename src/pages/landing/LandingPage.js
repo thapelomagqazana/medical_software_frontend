@@ -1,15 +1,18 @@
-import Header from "../components/header/Header";
-import Hero from "../components/hero/Hero";
-import Introduction from "../components/intro/Introduction"
-import FeatureHighlights from "../components/featureHighlight/featureHighlights/FeatureHighlights";
-import CTASection from "../components/cta/CTASection";
-import TestimonialSection from "../components/testimonialSection/TestimonialSection";
-import Footer from "../components/footer/Footer";
+import Header from "../../components/header/Header";
+import Hero from "../../components/hero/Hero";
+import Introduction from "../../components/intro/Introduction"
+import FeatureHighlights from "../../components/featureHighlight/featureHighlights/FeatureHighlights";
+import CTASection from "../../components/cta/CTASection";
+import TestimonialSection from "../../components/testimonialSection/TestimonialSection";
+import Footer from "../../components/footer/Footer";
 
 const LandingPage = () => {
+
+    const userLoggedIn = false; // Set to true if user is logged in
+    const appointmentScheduled = false; // Set to true if appointment is scheduled
     return (
         <div className="landing">
-            <Header userLoggedIn={true} appointmentScheduled={false} />
+            <Header userLoggedIn={userLoggedIn} appointmentScheduled={appointmentScheduled} />
             <Hero 
                 headline="Effortlessly Schedule Your Appointments"
                 subheading="Streamline your healthcare experience with our intuitive appointment scheduling platform."

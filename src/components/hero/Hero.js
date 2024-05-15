@@ -7,7 +7,7 @@ const Hero = ({ headline, subheading, ctaText }) => {
             <div className="hero-content">
                 <h1 className="hero-headline">{headline}</h1>
                 <p className="hero-subheading">{subheading}</p>
-                <button className="hero-cta">{ctaText}</button>
+                <button className="cta-button">{ctaText}</button>
             </div>
         </section>
     );

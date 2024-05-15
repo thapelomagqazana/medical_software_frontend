@@ -1,15 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from './pages/LandingPage';
-
+import LandingPage from './pages/landing/LandingPage';
+import LoginDialog from './pages/form/LoginForm';
 
 import './App.css';
+import SignUpForm from './pages/form/SignUpForm';
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
+        <Route path="/login" element={<LoginDialog/>}></Route>
+        <Route path="/register" element={<SignUpForm/>}></Route>
+
       </Routes>
     </BrowserRouter>
   );
