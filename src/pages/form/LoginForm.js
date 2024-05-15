@@ -7,7 +7,6 @@ const LoginForm = ({ onClose }) => {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    // Add login logic here
   };
   
   return (
