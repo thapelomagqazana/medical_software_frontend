@@ -7,13 +7,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color:  #f2f2f2;
+    
 }
   
 .hero-content {
     max-width: 800px;
     padding: 20px;
+    text-align: center;
+    color:  #f2f2f2;
 }
   
 .hero-headline {
@@ -27,7 +28,8 @@
     margin-bottom: 40px;
 }
 
-.hero-cta {
+.hero-cta,
+.navigation button {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
@@ -38,7 +40,8 @@
     transition: background-color 0.3s ease;
 }
 
-.hero-cta:hover {
+.hero-cta:hover,
+.navigation button:hover {
     background-color: #0056b3;
 }
 

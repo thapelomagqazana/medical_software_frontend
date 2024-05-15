@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './LoginForm.css';
+import './Form.css';
 
-const SignUpForm = () => {
+const RegisterForm = ({ onClose }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -68,4 +68,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default RegisterForm;

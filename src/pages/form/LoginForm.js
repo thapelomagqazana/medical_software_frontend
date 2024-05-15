@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './LoginForm.css';
+import './Form.css';
 
-const LoginForm = () => {
+const LoginForm = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   

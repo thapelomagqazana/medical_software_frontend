@@ -1,9 +1,10 @@
 const BASE_URL = "/api/appointments";  // The base URL according to the appointment backend API endpoint
+const DOMAIN = "http://localhost:3000";
 
 // Fetch available appointment slots from the server
 export const fetchAppointmentSlots = async () => {
     try {
-        const response = await fetch(`http://localhost:3000${BASE_URL}/slots`);
+        const response = await fetch(`${DOMAIN}${BASE_URL}/slots`);
         
         if (!response.ok){
             throw new Error("Failed to fetch appointment slots");
@@ -18,7 +19,7 @@ export const fetchAppointmentSlots = async () => {
 // Book a new appointment
 export const bookAppointment = async (appointmentData) => {
     try {
-        const response = await fetch(`http://localhost:3000${BASE_URL}/book`, {
+        const response = await fetch(`${DOMAIN}${BASE_URL}/book`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
