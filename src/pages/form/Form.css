@@ -61,5 +61,9 @@
     color: #007bff;
     text-decoration: underline;
   }
+
+  .error {
+    color: red;
+  }
   
   
