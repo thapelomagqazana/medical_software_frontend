@@ -21,7 +21,7 @@ const Header = (props) => {
       <Link to="/">Medical Scheduler</Link>
     </div>
     <div>
-      <p>Welcome to the Appointment Scheduling System</p>
+      {props.userLoggedIn && <p>Welcome to the Appointment Scheduling System</p>}
     </div>
     <nav className="navigation">
       <ul>
@@ -36,10 +36,6 @@ const Header = (props) => {
         {props.userLoggedIn && <li><Link to="/">Logout</Link></li>}
       </ul>
     </nav>
-    {props.userLoggedIn && <div className="search-bar">
-      <input type="text" placeholder="Search for providers..." />
-      <button>Search</button>
-    </div>}
 
       <Modal isOpen={isLoginOpen} onClose={closeLogin}>
         <LoginForm onClose={closeLogin} />

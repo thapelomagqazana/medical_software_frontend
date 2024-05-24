@@ -34,3 +34,19 @@ export const bookAppointment = async (appointmentData) => {
         throw error;
     }
 };
+
+// Search for appointments
+export const searchAppointment = async (query) => {
+    try {
+        const response = await fetch(`${DOMAIN}${BASE_URL}/search?${query.toString()}`);
+
+        if (!response.ok){
+            throw new Error("Failed to search appointments");
+        }
+        return response.json();
+    }
+    catch (error){
+        console.error("Error searching for appointment slots:", error);
+        throw error;
+    }
+};
