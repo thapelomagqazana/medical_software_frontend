@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 const BASE_URL = "/api/appointments";  // The base URL according to the appointment backend API endpoint
 const DOMAIN = "http://localhost:3000";
 
@@ -22,6 +23,7 @@ export const bookAppointment = async (appointmentData) => {
         const response = await fetch(`${DOMAIN}${BASE_URL}/book`, {
             method: "POST",
             headers: {
+                'Authorization': `Bearer ${Cookies.get("token")}`,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(appointmentData),
@@ -38,12 +40,21 @@ export const bookAppointment = async (appointmentData) => {
 // Search for appointments
 export const searchAppointment = async (query) => {
     try {
-        const response = await fetch(`${DOMAIN}${BASE_URL}/search?${query.toString()}`);
+        const url = new URL(`${DOMAIN}${BASE_URL}/search`);
+        url.searchParams.append('query', query);
+
+        const response = await fetch(url,{
+            headers: {
+                    'Authorization': `Bearer ${Cookies.get("token")}`,
+                    'Content-Type': 'application/json',
+                }
+        });
 
         if (!response.ok){
             throw new Error("Failed to search appointments");
         }
-        return response.json();
+        const data = await response.json(); // Await the JSON parsing
+        return data;
     }
     catch (error){
         console.error("Error searching for appointment slots:", error);

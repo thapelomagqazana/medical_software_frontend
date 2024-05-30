@@ -14,16 +14,22 @@ const QuickActions = () => {
     return (
         <div className="quick-actions-container">
             <button className="action-button schedule-button" onClick={openAddSchedule}>
-                <FontAwesomeIcon icon={faCalendarPlus} />
-                Schedule Appointment
+                <span className="button-icon">
+                    <FontAwesomeIcon icon={faCalendarPlus} />
+                </span>
+                <span className="button-text">Schedule Appointment</span>
             </button>
             <button className="action-button view-button">
-                <FontAwesomeIcon icon={faHistory} />
-                View Past Appointments
+                <span className="button-icon">
+                    <FontAwesomeIcon icon={faHistory} />
+                </span>
+                <span className="button-text">View Past Appointments</span>
             </button>
             <button className="action-button settings-button">
-                <FontAwesomeIcon icon={faCog} />
-                Account Settings
+                <span className="button-icon">
+                    <FontAwesomeIcon icon={faCog} />
+                </span>
+                <span className="button-text">Account Settings</span>
             </button>
 
             <Modal isOpen={isAddScheduleOpen} onClose={closeAddSchedule}>
